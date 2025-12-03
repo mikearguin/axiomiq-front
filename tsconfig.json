@@ -19,7 +19,26 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      // Generic alias (use specific aliases below when possible)
+      "@/*": ["./*"],
+
+      // Shared code - can be imported anywhere
+      "@/types/*": ["./types/*"],
+      "@/lib/shared/*": ["./lib/shared/*"],
+      "@/config/*": ["./config/*"],
+
+      // API-only code - ONLY for API routes
+      "@/lib/api/*": ["./lib/api/*"],
+      "@/lib/db/*": ["./lib/db/*"],
+      "@/lib/ai/*": ["./lib/ai/*"],
+      "@/lib/integrations/*": ["./lib/integrations/*"],
+      "@/lib/workflows/*": ["./lib/workflows/*"],
+
+      // UI-only code - for dashboard and marketing pages
+      "@/components/*": ["./components/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/stores/*": ["./stores/*"],
+      "@/lib/utils": ["./lib/utils.ts"]
     }
   },
   "include": [

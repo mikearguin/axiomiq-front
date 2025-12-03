@@ -73,6 +73,14 @@ export interface TransformNodeData {
   outputKey: string;
 }
 
+// Union of all node data types
+export type WorkflowNodeData =
+  | TriggerNodeData
+  | AgentNodeData
+  | ToolNodeData
+  | ConditionNodeData
+  | TransformNodeData;
+
 // Complete workflow definition (stored in JSONB)
 export interface WorkflowDefinition {
   nodes: Node<WorkflowNodeData>[];
